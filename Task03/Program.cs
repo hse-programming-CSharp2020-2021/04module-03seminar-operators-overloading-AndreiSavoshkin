@@ -70,7 +70,6 @@ namespace Task03
                 Console.WriteLine("error");
                 return;
             }
-
             Console.WriteLine((Clock)minute);
             Console.WriteLine((int)clock);
         }

@@ -34,7 +34,7 @@ namespace Task05
         {
             get => sum; set
             {
-                if (sum < 0)
+                if (value < 0)
                 {
                     throw new ArgumentException();
                 }
