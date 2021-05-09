@@ -34,7 +34,7 @@ namespace Task03
         {
             get => hours; set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException();
                 }
