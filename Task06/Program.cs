@@ -73,7 +73,7 @@ public readonly struct Fraction
     {
         int a = rat1.num * rat2.den;
         int b = rat1.den * rat2.num;
-        if (a * b == 0)
+        if (b == 0)
         {
             throw new DivideByZeroException();
         }
