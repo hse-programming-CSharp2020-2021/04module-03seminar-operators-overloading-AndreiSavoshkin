@@ -33,10 +33,58 @@ public readonly struct Fraction
     private readonly int num;
     private readonly int den;
 
-    public Fraction(int numerator, int denominator)
+    public Fraction(int num, int den)
     {
-        num = numerator;
-        den = denominator;
+        this.num = num;
+        this.den = den;
+    }
+
+    public static Fraction operator +(Fraction rat1, Fraction rat2)
+    {
+        int a = rat1.num * rat2.den + rat1.den * rat2.num;
+        int b = rat1.den * rat2.den;
+        Fraction rat = new Fraction(a / GCD(Math.Abs(a), Math.Abs(b)), b / GCD(Math.Abs(a), Math.Abs(b)));
+        return rat;
+    }
+
+    public static Fraction operator -(Fraction rat1, Fraction rat2)
+    {
+        Fraction Fraction = new Fraction(-1 * rat2.num, rat2.den);
+        return rat1 + Fraction;
+    }
+
+    public static Fraction operator *(Fraction rat1, Fraction rat2)
+    {
+        int a = rat1.num * rat2.num;
+        int b = rat1.den * rat2.den;
+
+        return new Fraction(a / GCD(Math.Abs(a), Math.Abs(b)), b / GCD(Math.Abs(a), Math.Abs(b)));
+    }
+
+    public static Fraction operator /(Fraction rat1, Fraction rat2)
+    {
+        int a = rat1.num * rat2.den;
+        int b = rat1.den * rat2.num;
+        if (a * b == 0)
+        {
+            throw new DivideByZeroException();
+        }
+        if (b < 0)
+        {
+            a *= -1;
+            b *= -1;
+        }
+        return new Fraction(a / GCD(Math.Abs(a), Math.Abs(b)), b / GCD(Math.Abs(a), Math.Abs(b)));
+    }
+    public static int GCD(int a, int b)
+    {
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
 
     public override string ToString() => $"{num}/{den}";
@@ -48,7 +96,7 @@ public static class OperatorOverloading
     {
         try
         {
-            
+
         }
         catch (ArgumentException)
         {

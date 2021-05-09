@@ -28,10 +28,19 @@ namespace Task01
     class Butter
     {
         public int Weight { get; set; }
+        public static Sandwich operator +(Bread bread, Butter butter)
+        {
+            if (bread.Weight <= 0 || butter.Weight <= 0)
+            {
+                throw new ArgumentException();
+            }
+            return new Sandwich { Weight = bread.Weight + butter.Weight };
+        }
     }
     class Sandwich
     {
         public int Weight { get; set; }
+
     }
 
     class MainClass
@@ -39,11 +48,12 @@ namespace Task01
         public static void Main()
         {
             string[] strs = Console.ReadLine().Split();
+            Sandwich sandwich = null;
             try
             {
                 Bread bread = new Bread { Weight = int.Parse(strs[0]) };
                 Butter butter = new Butter { Weight = int.Parse(strs[1]) };
-                Sandwich sandwich = bread + butter;
+                sandwich = bread + butter;
             }
             catch (ArgumentException)
             {
