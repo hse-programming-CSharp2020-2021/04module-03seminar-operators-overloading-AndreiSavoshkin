@@ -51,7 +51,7 @@ namespace Task05
         }
         public override string ToString()
         {
-            return Sum.ToString("f2");
+            return Sum.ToString("f2").Replace('.', ',');
         }
     }
     class Euro
