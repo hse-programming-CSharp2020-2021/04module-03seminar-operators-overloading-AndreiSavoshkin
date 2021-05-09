@@ -55,7 +55,7 @@ namespace Task04
     {
         public static void Main(string[] args)
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-EN");
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             Fahrenheit fahrenheit = new Fahrenheit() { Gradus = int.Parse(Console.ReadLine()) };
             Celcius celcius = new Celcius() { Gradus = int.Parse(Console.ReadLine()) };
             Console.WriteLine((Celcius)fahrenheit);

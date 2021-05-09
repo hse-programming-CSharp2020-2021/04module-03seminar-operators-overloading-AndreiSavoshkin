@@ -68,6 +68,7 @@ namespace Task03
             catch (ArgumentException)
             {
                 Console.WriteLine("error");
+                return;
             }
 
             Console.WriteLine((Clock)minute);

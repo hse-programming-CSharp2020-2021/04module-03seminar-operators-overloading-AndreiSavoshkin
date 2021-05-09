@@ -78,7 +78,7 @@ namespace Task05
     {
         public static void Main(string[] args)
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("he-IL");
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             try
             {
                 Dollar dollar = new Dollar { Sum = decimal.Parse(Console.ReadLine()) };

@@ -95,7 +95,14 @@ public readonly struct Fraction
         return a;
     }
 
-    public override string ToString() => $"{num}/{den}";
+    public override string ToString()
+    {
+        if (num == 0 || den == 1)
+        {
+            return num.ToString();
+        }
+        return $"{num}/{den}";
+    }
 }
 
 public static class OperatorOverloading

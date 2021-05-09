@@ -86,6 +86,7 @@ namespace Task01
             catch (ArgumentException)
             {
                 Console.WriteLine("error");
+                return;
             }
             Console.WriteLine(sandwich.Weight);
         }
