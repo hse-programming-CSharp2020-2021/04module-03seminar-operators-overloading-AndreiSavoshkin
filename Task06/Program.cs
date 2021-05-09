@@ -38,7 +38,15 @@ public readonly struct Fraction
         this.num = num;
         this.den = den;
     }
-
+    public static Fraction Parse(string input)
+    {
+        string[] data = input.Split('/');
+        if (data.Length == 2)
+        {
+            return new Fraction(int.Parse(data[0]), int.Parse(data[1]));
+        }
+        return new Fraction(int.Parse(data[0]), 1);
+    }
     public static Fraction operator +(Fraction rat1, Fraction rat2)
     {
         int a = rat1.num * rat2.den + rat1.den * rat2.num;
@@ -96,7 +104,12 @@ public static class OperatorOverloading
     {
         try
         {
-
+            Fraction fraction1 = Fraction.Parse(Console.ReadLine());
+            Fraction fraction2 = Fraction.Parse(Console.ReadLine());
+            Console.WriteLine(fraction1 + fraction2);
+            Console.WriteLine(fraction1 - fraction2);
+            Console.WriteLine(fraction1 * fraction2);
+            Console.WriteLine(fraction1 / fraction2);
         }
         catch (ArgumentException)
         {

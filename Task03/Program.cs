@@ -49,6 +49,10 @@ namespace Task03
         {
             return clock.Hours * 60;
         }
+        public override string ToString()
+        {
+            return hours.ToString();
+        }
     }
 
     class MainClass
