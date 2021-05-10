@@ -51,7 +51,7 @@ namespace Task05
         }
         public override string ToString()
         {
-            return Sum.ToString("f2").Replace('.', ',');
+            return Sum.ToString("f2");
         }
     }
     class Euro
@@ -70,7 +70,7 @@ namespace Task05
         }
         public override string ToString()
         {
-            return Sum.ToString("f2").Replace('.', ',');
+            return Sum.ToString("f2");
         }
     }
 
@@ -78,7 +78,7 @@ namespace Task05
     {
         public static void Main(string[] args)
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
+            CultureInfo.CurrentCulture = new CultureInfo("ru-RU");
             try
             {
                 Dollar dollar = new Dollar { Sum = decimal.Parse(Console.ReadLine()) };
