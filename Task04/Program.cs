@@ -34,7 +34,7 @@ namespace Task04
         }
         public override string ToString()
         {
-            return Gradus.ToString("f2").Replace('.', ',');
+            return Gradus.ToString("f2");
         }
     }
 
@@ -55,7 +55,7 @@ namespace Task04
     {
         public static void Main(string[] args)
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
+            CultureInfo.CurrentCulture = new CultureInfo("ru-RU");
             Fahrenheit fahrenheit = new Fahrenheit() { Gradus = int.Parse(Console.ReadLine()) };
             Celcius celcius = new Celcius() { Gradus = int.Parse(Console.ReadLine()) };
             Console.WriteLine((Celcius)fahrenheit);
