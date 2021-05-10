@@ -32,7 +32,8 @@ namespace Task03
         int hours;
         public int Hours
         {
-            get => hours; set
+            get => hours; 
+            set
             {
                 if (value < 0)
                 {
@@ -63,6 +64,10 @@ namespace Task03
             Clock clock = null;
             try
             {
+                if (minute < 0)
+                {
+                    throw new ArgumentException();
+                }
                 clock = new Clock { Hours = int.Parse(Console.ReadLine()) };
             }
             catch (ArgumentException)
