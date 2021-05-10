@@ -47,7 +47,7 @@ namespace Task04
         }
         public override string ToString()
         {
-            return Gradus.ToString("f2").Replace('.', ',');
+            return Gradus.ToString("f2");
         }
     }
 
